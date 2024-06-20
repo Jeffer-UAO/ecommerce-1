@@ -161,41 +161,24 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 
-STATIC_URL = '/static/'
-# STATIC_ROOT = BASE_DIR /'static'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 STATIC_TMP = os.path.join(BASE_DIR, 'static')
 
 os.makedirs(STATIC_TMP, exist_ok=True)
-os.makedirs(STATIC_ROOT, exist_ok=True)
 
-# STATICFILES_DIRS = [
-#     'greatkart/static',
-# ]
 
-# AWS S3 Static Files Configuration
-# AWS_ACCESS_KEY_ID = 'config('')'
-# AWS_SECRET_ACCESS_KEY = 'config('')'
-# AWS_STORAGE_BUCKET_NAME = 'config('')'
-# AWS_S3_CUSTOM_DOMAIN = '.s3.amazonaws.com'
-# AWS_S3_OBJECT_PARAMETERS = {
-#     'CacheControl': 'max-age=86400',
-# }
-# AWS_S3_FILE_OVERWRITE = False
-# AWS_DEFAULT_ACL = 'public-read'
+# AWS_LOCATION = 'static'
 
-AWS_LOCATION = 'static'
-
-# STATICFILES_DIRS = [
-#     'greatkart/static',
-# ]
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
-# STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+
+STATIC_URL = '/static/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+MEDIA_URL = '/media/'
 
 # STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
@@ -204,8 +187,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # DEFAULT_FILE_STORAGE = 'greatkart.media_storages.MediaStorage'
 
 # media files configuration
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR /'media'
 
 
 from django.contrib.messages import constants as messages
