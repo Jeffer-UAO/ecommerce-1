@@ -111,6 +111,20 @@ AUTH_USER_MODEL = 'accounts.Account'
 #         }
 #     }
 
+
+# DATABASES = {
+#     'default': {
+#         # 'ENGINE': 'django_tenants.postgresql_backend',
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'db_10',
+#         'USER': 'postgres',
+#         'PASSWORD': 'D3s4rr0ll0',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
+
+
 DATABASES = {
     'default': {
         # 'ENGINE': 'django_tenants.postgresql_backend',
@@ -170,14 +184,19 @@ os.makedirs(STATIC_TMP, exist_ok=True)
 
 # AWS_LOCATION = 'static'
 
+
+
+
+STATIC_URL = '/static/'
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
-
-STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 MEDIA_URL = '/media/'
 
 # STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
